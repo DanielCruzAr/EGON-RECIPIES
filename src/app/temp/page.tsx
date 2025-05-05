@@ -4,7 +4,7 @@ import FridgeAccordion from "@/components/FridgeAccordion";
 import { Switch } from "@/components/ui/switch";
 import React, { useState } from "react";
 
-const temp = () => {
+const Page = () => {
     const [zonesAvailable, setZonesAvailable] = useState(false);
 
     return (
@@ -26,4 +26,4 @@ const temp = () => {
     );
 };
 
-export default temp;
+export default Page;

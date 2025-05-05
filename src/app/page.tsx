@@ -62,20 +62,20 @@ export default function Home() {
                     </h2>
                 </div>
                 <div className="flex gap-4 w-full justify-center overflow-auto lg:overflow-hidden">
-                    <div className="flex flex-col items-center justify-center w-[150px] h-[150px] rounded-2xl p-6 bg-card-2">
+                    <div className="flex flex-col items-center justify-center w-[150px] h-[150px] rounded-2xl p-6 bg-card-2 hover:transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
                         <div className="flex flex-col items-center justify-center">
                             <h4>RECETAS</h4>
                             <p className="text-gray-1 text-sm">SNACKS</p>
                         </div>
                         <p className="text-gray-1 text-sm">Ir &gt;</p>
                     </div>
-                    <div className="flex flex-col items-center justify-center w-[150px] h-[150px] rounded-2xl p-6 bg-card-2">
+                    <div className="flex flex-col items-center justify-center w-[150px] h-[150px] rounded-2xl p-6 bg-card-2 hover:transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
                         <div className="flex flex-col items-center justify-centerr">
                             <PlusIcon className="text-gray-1 h-15 w-15" />
                             <p className="text-gray-1 text-sm">Agregar Atajo</p>
                         </div>
                     </div>
-                    <div className="flex flex-col items-center justify-center w-[150px] h-[150px] rounded-2xl p-6 bg-card-2">
+                    <div className="flex flex-col items-center justify-center w-[150px] h-[150px] rounded-2xl p-6 bg-card-2 hover:transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
                         <div className="flex flex-col items-center justify-centerr">
                             <PlusIcon className="text-gray-1 h-15 w-15" />
                             <p className="text-gray-1 text-sm">Agregar Atajo</p>
