@@ -17,7 +17,7 @@ export default function RootLayout({
         <html lang="en">
             <body>
                 <div className="grid grid-cols-12 h-screen py-10 overflow-y-scroll scrollbar-none">
-                    <AppSidebar className="col-span-2 md:col-span-4 px-10 overflow-auto" />
+                    <AppSidebar className="col-span-2 md:col-span-4 px-2 md:px-10 overflow-auto" />
                     <main className="col-span-10 md:col-span-8">
                         <Page>{children}</Page>
                     </main>

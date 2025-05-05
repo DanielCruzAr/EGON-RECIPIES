@@ -10,6 +10,7 @@ import {
     Webcam,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const AppSidebar = ({ className }: { className?: string }) => {
     const pathName = usePathname();
@@ -84,7 +85,7 @@ const AppSidebar = ({ className }: { className?: string }) => {
             } flex flex-col gap-4 scrollbar-thumb-foreground scrollbar-track-background scrollbar-thin`}
         >
             {items.map((item) => (
-                <a
+                <Link
                     key={item.name}
                     className="flex items-center p-2 hover:bg-foreground/10 hover:rounded-2xl cursor-pointer"
                     href={item.href || "#"}
@@ -96,10 +97,14 @@ const AppSidebar = ({ className }: { className?: string }) => {
                     >
                         {item.icon}
                     </div>
-                    <h3 className={`ml-2 ${item.active ? "neon-text" : ""}`}>
+                    <h3
+                        className={`hidden md:block ml-2 ${
+                            item.active ? "neon-text" : ""
+                        }`}
+                    >
                         {item.name}
                     </h3>
-                </a>
+                </Link>
             ))}
         </div>
     );

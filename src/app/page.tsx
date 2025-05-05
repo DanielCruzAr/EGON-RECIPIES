@@ -14,7 +14,7 @@ export default function Home() {
     }, []);
 
     return (
-        <div>
+        <div className="flex flex-col h-full">
             <div className="flex w-full justify-end">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +46,7 @@ export default function Home() {
                     />
                 </svg>
             </div>
-            <div className="flex flex-col items-center w-full gap-2">
+            <div className="flex flex-col items-center justify-center w-full h-full gap-2">
                 <h4>Querétaro, Querétaro</h4>
                 <h1 className="font-semibold text-4xl text-white neon-text">
                     ¡Hola, Mar!
@@ -82,11 +82,11 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="mt-10">
-                    <p className="text-gray-2">
-                        Toca para personalizar pantalla principal
-                    </p>
-                </div>
+            </div>
+            <div className="flex w-full justify-center mt-10">
+                <p className="text-gray-2">
+                    Toca para personalizar pantalla principal
+                </p>
             </div>
         </div>
     );
