@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { act } from "react";
 import {
     Bell,
     CircleUser,
@@ -7,19 +9,72 @@ import {
     Thermometer,
     Webcam,
 } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 const AppSidebar = ({ className }: { className?: string }) => {
+    const pathName = usePathname();
+
     const items = [
-        { name: "TEMPERATURA", icon: <Thermometer /> },
-        { name: "MODO ECO", icon: <CircleUser /> },
-        { name: "ALARMA", icon: <Bell /> },
-        { name: "LOCK", icon: <LockKeyhole /> },
-        { name: "CONSUME PRONTO", icon: <Clock /> },
-        { name: "CÁMARA", icon: <Webcam /> },
-        { name: "RECETAS", icon: <CircleUser /> },
-        { name: "LIMPIADOR DE OLORES", icon: <CircleUser /> },
-        { name: "ASISTENTE DE VOZ EGON", icon: <CircleUser /> },
-        { name: "SINCRONIZAR APP", icon: <CircleUser /> },
+        {
+            name: "TEMPERATURA",
+            icon: <Thermometer />,
+            href: "/temp",
+            active: pathName === "/temp",
+        },
+        {
+            name: "MODO ECO",
+            icon: <CircleUser />,
+            href: "/eco",
+            active: pathName === "/eco",
+        },
+        {
+            name: "ALARMA",
+            icon: <Bell />,
+            href: "/alarm",
+            active: pathName === "/alarm",
+        },
+        {
+            name: "LOCK",
+            icon: <LockKeyhole />,
+            href: "/lock",
+            active: pathName === "/lock",
+        },
+        {
+            name: "CONSUME PRONTO",
+            icon: <Clock />,
+            href: "/consume",
+            active: pathName === "/consume",
+        },
+        {
+            name: "CÁMARA",
+            icon: <Webcam />,
+            href: "/camera",
+            active: pathName === "/camera",
+        },
+        {
+            name: "RECETAS",
+            icon: <CircleUser />,
+            href: "/recipes",
+            active: pathName === "/recipies",
+        },
+        {
+            name: "LIMPIADOR DE OLORES",
+            icon: <CircleUser />,
+            href: "/smells",
+            active: pathName === "/smells",
+        },
+        {
+            name: "ASISTENTE DE VOZ EGON",
+            icon: <CircleUser />,
+            href: "/egon",
+            active: pathName === "/egon",
+        },
+        {
+            name: "SINCRONIZAR APP",
+            icon: <CircleUser />,
+            href: "/sincronize",
+            active: pathName === "/sincronize",
+        },
     ];
 
     return (
@@ -31,13 +86,19 @@ const AppSidebar = ({ className }: { className?: string }) => {
             {items.map((item) => (
                 <a
                     key={item.name}
-                    className="flex items-center p-2 hover:bg-foreground/10 rounded-xl cursor-pointer"
-                    href="#"
+                    className="flex items-center p-2 hover:bg-foreground/10 hover:rounded-2xl cursor-pointer"
+                    href={item.href || "#"}
                 >
-                    <div className="rounded-full border-2 border-foreground p-2">
+                    <div
+                        className={`rounded-full border-2 ${
+                            item.active ? "border-primary" : "border-foreground"
+                        } p-2`}
+                    >
                         {item.icon}
                     </div>
-                    <h3 className="ml-2">{item.name}</h3>
+                    <h3 className={`ml-2 ${item.active ? "neon-text" : ""}`}>
+                        {item.name}
+                    </h3>
                 </a>
             ))}
         </div>

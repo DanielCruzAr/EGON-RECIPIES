@@ -1,7 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-
-import { Card } from "@/components/ui/card";
 import { PlusIcon } from "lucide-react";
 
 export default function Home() {
@@ -16,86 +14,80 @@ export default function Home() {
     }, []);
 
     return (
-        <div className="flex items-center justify-center px-10">
-            <Card className="w-full h-full p-6 rounded-2xl items-center">
-                <div className="flex w-full justify-end">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 mx-2"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M12 3v3m0 12v3m9-9h-3M6 12H3m15.364-6.364l-2.121 2.121M6.757 17.243l-2.121-2.121m12.728 0l2.121 2.121M6.757 6.757l2.121 2.121M12 8a4 4 0 100 8 4 4 0 000-8z"
-                        />
-                    </svg>
-                    <p>28°C</p>
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M5.05 11.293a8 8 0 0113.9 0m-2.83 2.828a4 4 0 00-8.24 0m1.415 1.415a1 1 0 011.415 0m2.83 0a1 1 0 011.415 0"
-                        />
-                    </svg>
+        <div>
+            <div className="flex w-full justify-end">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 mx-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                >
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 3v3m0 12v3m9-9h-3M6 12H3m15.364-6.364l-2.121 2.121M6.757 17.243l-2.121-2.121m12.728 0l2.121 2.121M6.757 6.757l2.121 2.121M12 8a4 4 0 100 8 4 4 0 000-8z"
+                    />
+                </svg>
+                <p>28°C</p>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                >
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M5.05 11.293a8 8 0 0113.9 0m-2.83 2.828a4 4 0 00-8.24 0m1.415 1.415a1 1 0 011.415 0m2.83 0a1 1 0 011.415 0"
+                    />
+                </svg>
+            </div>
+            <div className="flex flex-col items-center w-full gap-2">
+                <h4>Querétaro, Querétaro</h4>
+                <h1 className="font-semibold text-4xl text-white neon-text">
+                    ¡Hola, Mar!
+                </h1>
+                <div className="p-2">
+                    <h5>{currentDate.toDateString()}</h5>
+                    <h2>
+                        {currentDate.toLocaleTimeString([], {
+                            hour: "2-digit",
+                            minute: "2-digit",
+                            hour12: true,
+                        })}
+                    </h2>
                 </div>
-                <div className="flex flex-col items-center w-full gap-2">
-                    <h4>Querétaro, Querétaro</h4>
-                    <h1 className="font-semibold text-4xl text-white neon-text">
-                        ¡Hola, Mar!
-                    </h1>
-                    <div className="p-2">
-                        <h5>{currentDate.toDateString()}</h5>
-                        <h2>
-                            {currentDate.toLocaleTimeString([], {
-                                hour: "2-digit",
-                                minute: "2-digit",
-                                hour12: true,
-                            })}
-                        </h2>
+                <div className="flex gap-4 w-full justify-center overflow-auto lg:overflow-hidden">
+                    <div className="flex flex-col items-center justify-center w-[150px] h-[150px] rounded-2xl p-6 bg-card-2">
+                        <div className="flex flex-col items-center justify-center">
+                            <h4>RECETAS</h4>
+                            <p className="text-gray-1 text-sm">SNACKS</p>
+                        </div>
+                        <p className="text-gray-1 text-sm">Ir &gt;</p>
                     </div>
-                    <div className="flex gap-4 w-full justify-center overflow-auto lg:overflow-hidden">
-                        <div className="flex flex-col items-center justify-center w-[150px] h-[150px] rounded-2xl p-6 bg-card-2">
-                            <div className="flex flex-col items-center justify-center">
-                                <h4>RECETAS</h4>
-                                <p className="text-gray-1 text-sm">SNACKS</p>
-                            </div>
-                            <p className="text-gray-1 text-sm">Ir &gt;</p>
-                        </div>
-                        <div className="flex flex-col items-center justify-center w-[150px] h-[150px] rounded-2xl p-6 bg-card-2">
-                            <div className="flex flex-col items-center justify-centerr">
-                                <PlusIcon className="text-gray-1 h-15 w-15" />
-                                <p className="text-gray-1 text-sm">
-                                    Agregar Atajo
-                                </p>
-                            </div>
-                        </div>
-                        <div className="flex flex-col items-center justify-center w-[150px] h-[150px] rounded-2xl p-6 bg-card-2">
-                            <div className="flex flex-col items-center justify-centerr">
-                                <PlusIcon className="text-gray-1 h-15 w-15" />
-                                <p className="text-gray-1 text-sm">
-                                    Agregar Atajo
-                                </p>
-                            </div>
+                    <div className="flex flex-col items-center justify-center w-[150px] h-[150px] rounded-2xl p-6 bg-card-2">
+                        <div className="flex flex-col items-center justify-centerr">
+                            <PlusIcon className="text-gray-1 h-15 w-15" />
+                            <p className="text-gray-1 text-sm">Agregar Atajo</p>
                         </div>
                     </div>
-                    <div className="mt-10">
-                        <p className="text-gray-2">
-                            Toca para personalizar pantalla principal
-                        </p>
+                    <div className="flex flex-col items-center justify-center w-[150px] h-[150px] rounded-2xl p-6 bg-card-2">
+                        <div className="flex flex-col items-center justify-centerr">
+                            <PlusIcon className="text-gray-1 h-15 w-15" />
+                            <p className="text-gray-1 text-sm">Agregar Atajo</p>
+                        </div>
                     </div>
                 </div>
-            </Card>
+                <div className="mt-10">
+                    <p className="text-gray-2">
+                        Toca para personalizar pantalla principal
+                    </p>
+                </div>
+            </div>
         </div>
     );
 }

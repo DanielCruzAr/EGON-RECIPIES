@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import AppSidebar from "@/components/AppSidebar";
+import Page from "@/components/Page";
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -18,7 +19,7 @@ export default function RootLayout({
                 <div className="grid grid-cols-12 h-screen py-10 overflow-y-scroll scrollbar-none">
                     <AppSidebar className="col-span-2 md:col-span-4 px-10 overflow-auto" />
                     <main className="col-span-10 md:col-span-8">
-                        {children}
+                        <Page>{children}</Page>
                     </main>
                 </div>
             </body>
