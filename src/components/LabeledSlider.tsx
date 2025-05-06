@@ -1,11 +1,23 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { Slider } from "./ui/slider";
 
-const LabeledSlider = () => {
-    const min = -24;
-    const max = -15;
-    const marks = [min, -18, max];
+// refri 1 a 7
+// congelador -15 a -21
+const LabeledSlider = ({
+    min,
+    max,
+    defaultValue,
+}: {
+    min: number;
+    max: number;
+    defaultValue: number;
+}) => {
+    const [sliderValue, setSliderValue] = useState<number[]>([defaultValue]);
+    const marks = [min, sliderValue, max];
     const bottomLabels = ["-", "", "+"];
+
     return (
         <div className="w-full px-4">
             {/* Labels above the slider */}
@@ -27,7 +39,14 @@ const LabeledSlider = () => {
             </div>
 
             {/* Slider */}
-            <Slider defaultValue={[-19.5]} min={min} max={max} step={0.5} />
+            <Slider
+                defaultValue={[-18]}
+                min={min}
+                max={max}
+                step={1}
+                value={sliderValue}
+                onValueChange={(value) => setSliderValue(value)}
+            />
 
             {/* Labels below the slider */}
             <div className="flex justify-between px-2 mt-2 text-sm">

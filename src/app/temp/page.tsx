@@ -2,17 +2,24 @@
 
 import FridgeAccordion from "@/components/FridgeAccordion";
 import { Switch } from "@/components/ui/switch";
-import React, { useState } from "react";
+import { useUIStore } from "@/stores/uiStore";
+import React from "react";
 
 const Page = () => {
-    const [zonesAvailable, setZonesAvailable] = useState(false);
+    const zonesAvailable = useUIStore((state) => state.zonesAvailable);
+    const setZonesAvailable = useUIStore((state) => state.setZonesAvailable);
+    const uniformMode = useUIStore((state) => state.uniformMode);
+    const setUniformMode = useUIStore((state) => state.setUniformMode);
 
     return (
         <div className="flex flex-col items-start justify-start px-10 gap-4">
             <h2>TEMPERATURA</h2>
             <div className="flex gap-6 items-center justify-between w-45">
                 <h3>UNIFORME</h3>
-                <Switch />
+                <Switch
+                    checked={uniformMode}
+                    onCheckedChange={() => setUniformMode(!uniformMode)}
+                />
             </div>
             <div className="flex gap-6 items-center justify-between w-45">
                 <h3>POR ZONAS</h3>

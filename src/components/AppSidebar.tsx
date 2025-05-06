@@ -11,34 +11,40 @@ import {
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { useUIStore } from "@/stores/uiStore";
 
 const AppSidebar = ({ className }: { className?: string }) => {
     const pathName = usePathname();
+    const zonesAvailable = useUIStore((state) => state.zonesAvailable);
+    const uniformMode = useUIStore((state) => state.uniformMode);
+    const ecoMode = useUIStore((state) => state.ecoMode);
+    const alarm = useUIStore((state) => state.alarm);
+    const lock = useUIStore((state) => state.lock);
 
     const items = [
         {
             name: "TEMPERATURA",
             icon: <Thermometer />,
             href: "/temp",
-            active: pathName === "/temp",
+            active: zonesAvailable && uniformMode,
         },
         {
             name: "MODO ECO",
             icon: <CircleUser />,
             href: "/eco",
-            active: pathName === "/eco",
+            active: ecoMode,
         },
         {
             name: "ALARMA",
             icon: <Bell />,
             href: "/alarm",
-            active: pathName === "/alarm",
+            active: alarm,
         },
         {
             name: "LOCK",
             icon: <LockKeyhole />,
             href: "/lock",
-            active: pathName === "/lock",
+            active: lock,
         },
         {
             name: "CONSUME PRONTO",
@@ -92,14 +98,14 @@ const AppSidebar = ({ className }: { className?: string }) => {
                 >
                     <div
                         className={`rounded-full border-2 ${
-                            item.active ? "border-primary" : "border-foreground"
+                            item.active ? "neon-border" : "border-foreground"
                         } p-2`}
                     >
                         {item.icon}
                     </div>
                     <h3
                         className={`hidden md:block ml-2 ${
-                            item.active ? "neon-text" : ""
+                            item.href === pathName ? "neon-text" : ""
                         }`}
                     >
                         {item.name}

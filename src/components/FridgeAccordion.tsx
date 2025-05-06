@@ -20,13 +20,21 @@ const FridgeAccordion = ({ active }: { active: boolean }) => {
                     <div className="flex flex-col md:flex-row w-full justify-between items-center">
                         <p className="text-gray-1">Puerta</p>
                         <div className="flex w-full md:w-3/4">
-                            <LabeledSlider />
+                            <LabeledSlider
+                                min={-21}
+                                max={-15}
+                                defaultValue={-18}
+                            />
                         </div>
                     </div>
                     <div className="flex flex-col md:flex-row w-full justify-between items-center border-t-2 border-t-gray-3 pt-4">
                         <p className="text-gray-1">Caja</p>
                         <div className="flex w-full md:w-3/4">
-                            <LabeledSlider />
+                            <LabeledSlider
+                                min={-21}
+                                max={-15}
+                                defaultValue={-18}
+                            />
                         </div>
                     </div>
                 </AccordionContent>
@@ -37,13 +45,13 @@ const FridgeAccordion = ({ active }: { active: boolean }) => {
                     <div className="flex flex-col md:flex-row w-full justify-between items-center">
                         <p className="text-gray-1">Puerta</p>
                         <div className="flex w-full md:w-3/4">
-                            <LabeledSlider />
+                            <LabeledSlider min={1} max={7} defaultValue={4} />
                         </div>
                     </div>
                     <div className="flex flex-col md:flex-row w-full justify-between items-center border-t-2 border-t-gray-3 pt-4">
                         <p className="text-gray-1">Caja</p>
                         <div className="flex w-full md:w-3/4">
-                            <LabeledSlider />
+                            <LabeledSlider min={1} max={7} defaultValue={4} />
                         </div>
                     </div>
                 </AccordionContent>
