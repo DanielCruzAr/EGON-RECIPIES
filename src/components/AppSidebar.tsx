@@ -23,6 +23,8 @@ const AppSidebar = ({ className }: { className?: string }) => {
     const ecoMode = useUIStore((state) => state.ecoMode);
     const alarm = useUIStore((state) => state.alarm);
     const lock = useUIStore((state) => state.lock);
+    const smells = useUIStore((state) => state.smells);
+    const egon = useUIStore((state) => state.egon);
 
     const items = [
         {
@@ -71,13 +73,13 @@ const AppSidebar = ({ className }: { className?: string }) => {
             name: "LIMPIADOR DE OLORES",
             icon: <Shell />,
             href: "/smells",
-            active: pathName === "/smells",
+            active: smells,
         },
         {
             name: "ASISTENTE DE VOZ EGON",
             icon: <CircleUser />,
             href: "/egon",
-            active: pathName === "/egon",
+            active: egon,
         },
         {
             name: "SINCRONIZAR APP",
@@ -108,7 +110,7 @@ const AppSidebar = ({ className }: { className?: string }) => {
                     </div>
                     <h3
                         className={`hidden md:block ml-2 ${
-                            item.href === pathName ? "neon-text" : ""
+                            pathName.includes(item.href) ? "neon-text" : ""
                         }`}
                     >
                         {item.name}

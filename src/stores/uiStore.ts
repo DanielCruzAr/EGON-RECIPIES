@@ -13,6 +13,12 @@ interface UIState {
     setLock: (value: boolean) => void;
     recipesValue: string;
     setRecipesValue: (value: string) => void;
+    smells: boolean;
+    setSmells: (value: boolean) => void;
+    selectedDays: string[];
+    setSelectedDays: (value: string[]) => void;
+    egon: boolean;
+    setEgon: (value: boolean) => void;
 }
 
 export const useUIStore = create<UIState>((set) => ({
@@ -28,4 +34,10 @@ export const useUIStore = create<UIState>((set) => ({
     setLock: (value) => set({ lock: value }),
     recipesValue: "desayunos",
     setRecipesValue: (value) => set({ recipesValue: value }),
+    smells: false,
+    setSmells: (value) => set({ smells: value }),
+    selectedDays: [],
+    setSelectedDays: (value) => set({ selectedDays: value }),
+    egon: false,
+    setEgon: (value) => set({ egon: value }),
 }));
