@@ -6,12 +6,18 @@ import { usePathname } from "next/navigation";
 import { Undo2 } from "lucide-react";
 import Link from "next/link";
 
-const Page = ({ children }: { children: React.ReactNode }) => {
+const Page = ({
+    children,
+    className,
+}: {
+    children: React.ReactNode;
+    className: string;
+}) => {
     const pathName = usePathname();
 
     return (
-        <div className="flex flex-col items-center justify-center px-10 h-full">
-            <Card className="w-full h-full p-6 rounded-2xl">{children}</Card>
+        <div className={className}>
+            <Card className="w-full p-6 rounded-2xl h-full">{children}</Card>
             {pathName !== "/" && (
                 <div className="flex justify-end w-full mt-4">
                     <Link

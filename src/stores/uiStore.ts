@@ -11,6 +11,8 @@ interface UIState {
     setAlarm: (value: boolean) => void;
     lock: boolean;
     setLock: (value: boolean) => void;
+    recipesValue: string;
+    setRecipesValue: (value: string) => void;
 }
 
 export const useUIStore = create<UIState>((set) => ({
@@ -24,4 +26,6 @@ export const useUIStore = create<UIState>((set) => ({
     setAlarm: (value) => set({ alarm: value }),
     lock: false,
     setLock: (value) => set({ lock: value }),
+    recipesValue: "desayunos",
+    setRecipesValue: (value) => set({ recipesValue: value }),
 }));

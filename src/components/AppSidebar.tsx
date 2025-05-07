@@ -8,6 +8,9 @@ import {
     LockKeyhole,
     Thermometer,
     Webcam,
+    BookOpen,
+    Shell,
+    MonitorSmartphone,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
@@ -50,23 +53,23 @@ const AppSidebar = ({ className }: { className?: string }) => {
             name: "CONSUME PRONTO",
             icon: <Clock />,
             href: "/consume",
-            active: pathName === "/consume",
+            active: false,
         },
         {
             name: "CÁMARA",
             icon: <Webcam />,
             href: "/camera",
-            active: pathName === "/camera",
+            active: false,
         },
         {
             name: "RECETAS",
-            icon: <CircleUser />,
+            icon: <BookOpen />,
             href: "/recipes",
-            active: pathName === "/recipies",
+            active: false,
         },
         {
             name: "LIMPIADOR DE OLORES",
-            icon: <CircleUser />,
+            icon: <Shell />,
             href: "/smells",
             active: pathName === "/smells",
         },
@@ -78,9 +81,9 @@ const AppSidebar = ({ className }: { className?: string }) => {
         },
         {
             name: "SINCRONIZAR APP",
-            icon: <CircleUser />,
+            icon: <MonitorSmartphone />,
             href: "/sincronize",
-            active: pathName === "/sincronize",
+            active: false,
         },
     ];
 

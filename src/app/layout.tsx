@@ -16,11 +16,11 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body>
-                <div className="grid grid-cols-12 h-screen pb-10 pt-24 md:pt-20 overflow-y-scroll scrollbar-none">
-                    <AppSidebar className="col-span-2 md:col-span-4 px-2 md:px-10 overflow-y-auto" />
-                    <main className="col-span-10 md:col-span-8">
-                        <Page>{children}</Page>
-                    </main>
+                <div className="grid grid-cols-12 h-screen pb-10 pt-24 md:pt-16 overflow-y-scroll scrollbar-none">
+                    <AppSidebar className="col-span-2 md:col-span-4 px-2 md:px-10 py-4 overflow-y-auto" />
+                    <Page className="flex flex-col col-span-10 md:col-span-8 items-center justify-center px-10 h-full w-full py-4">
+                        {children}
+                    </Page>
                 </div>
             </body>
         </html>

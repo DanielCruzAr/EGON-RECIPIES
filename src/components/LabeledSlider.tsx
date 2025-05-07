@@ -40,7 +40,7 @@ const LabeledSlider = ({
 
             {/* Slider */}
             <Slider
-                defaultValue={[-18]}
+                defaultValue={[defaultValue]}
                 min={min}
                 max={max}
                 step={1}
