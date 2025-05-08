@@ -11,7 +11,7 @@ const Page = () => {
 
     return (
         <div className="flex flex-col items-start justify-start px-10 gap-4">
-            <h2>ASISTENTE DE VOZ "EGON"</h2>
+            <h2>ASISTENTE DE VOZ EGON</h2>
             <p className="text-gray-1">
                 EGON es un asistente inteligente que te ayuda a encontrar
                 información y a realizar tareas.
