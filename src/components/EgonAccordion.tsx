@@ -82,7 +82,7 @@ const EgonAccordion = () => {
             <AccordionItem value="item-2">
                 <AccordionTrigger>
                     <div className="flex flex-col w-full">
-                        <h3>"OYE EGON"</h3>
+                        <h3>OYE EGON</h3>
                         <p>Configura por medio de tu voz</p>
                     </div>
                     <div className="flex items-center justify-end w-full gap-2">
