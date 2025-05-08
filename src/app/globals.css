@@ -39,6 +39,7 @@
     --sidebar-ring: oklch(0.556 0 0);
     --gray-1: #b0b0b0;
     --gray-2: #6b6b6b;
+    --gray-3: #848181;
 }
 
 @theme inline {
@@ -83,6 +84,7 @@
     --radius-xl: calc(var(--radius) + 4px);
     --color-gray-1: var(--gray-1);
     --color-gray-2: var(--gray-2);
+    --color-gray-3: var(--gray-3);
 }
 
 @media (prefers-color-scheme: dark) {
