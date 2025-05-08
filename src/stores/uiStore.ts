@@ -73,36 +73,3 @@ export const useUIStore = create<UIState>()(
         }
     )
 );
-
-/*
-(set) => ({
-            zonesAvailable: false,
-            setZonesAvailable: (value) => set({ zonesAvailable: value }),
-            uniformMode: false,
-            setUniformMode: (value) => set({ uniformMode: value }),
-            ecoMode: false,
-            setEcoMode: (value) => set({ ecoMode: value }),
-            alarm: false,
-            setAlarm: (value) => set({ alarm: value }),
-            lock: false,
-            setLock: (value) => set({ lock: value }),
-            recipesValue: "desayunos",
-            setRecipesValue: (value) => set({ recipesValue: value }),
-            smells: false,
-            setSmells: (value) => set({ smells: value }),
-            selectedDays: [],
-            setSelectedDays: (value) => set({ selectedDays: value }),
-            egon: false,
-            setEgon: (value) => set({ egon: value }),
-            selectedLanguage: 0,
-            setSelectedLanguage: (value) => set({ selectedLanguage: value }),
-            heyEgon: false,
-            setHeyEgon: (value) => set({ heyEgon: value }),
-            egonVoiceVariant: "",
-            setEgonVoiceVariant: (value) => set({ egonVoiceVariant: value }),
-            egonVoice: 0,
-            setEgonVoice: (value) => set({ egonVoice: value }),
-            speakingSpeed: "normal",
-            setSpeakingSpeed: (value) => set({ speakingSpeed: value }),
-        })
-*/

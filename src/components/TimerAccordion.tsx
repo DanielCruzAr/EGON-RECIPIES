@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/accordion";
 import React from "react";
 import { Check } from "lucide-react";
+import Picker from "react-mobile-picker";
 
 const weekDays = [
     "lunes",
@@ -17,14 +18,24 @@ const weekDays = [
     "domingos",
 ];
 
+const pickerColumns = ["hours", "minutes", "meridian"];
+
 const TimerAccordion = ({
     active,
     selectedDays,
     setSelectedDays,
+    timerValue,
+    setTimerValue,
 }: {
     active: boolean;
     selectedDays: string[];
     setSelectedDays: (value: string[]) => void;
+    timerValue: { hours: number; minutes: number; meridian: string };
+    setTimerValue: (value: {
+        hours: number;
+        minutes: number;
+        meridian: string;
+    }) => void;
 }) => {
     return (
         <Accordion
@@ -35,7 +46,40 @@ const TimerAccordion = ({
             <AccordionItem value="item-1">
                 <AccordionTrigger>HORA</AccordionTrigger>
                 <AccordionContent className="flex flex-col gap-4">
-                    <div>Time Picker</div>
+                    <div>
+                        <Picker
+                            value={timerValue}
+                            onChange={setTimerValue}
+                            wheelMode="normal"
+                        >
+                            {pickerColumns.map((column, index) => (
+                                <Picker.Column key={index} name={column}>
+                                    {column === "hours" &&
+                                        Array.from({ length: 12 }, (_, i) => (
+                                            <Picker.Item key={i} value={i}>
+                                                {i < 10 ? `0${i}` : i}
+                                            </Picker.Item>
+                                        ))}
+                                    {column === "minutes" &&
+                                        Array.from({ length: 60 }, (_, i) => (
+                                            <Picker.Item key={i} value={i}>
+                                                {i < 10 ? `0${i}` : i}
+                                            </Picker.Item>
+                                        ))}
+                                    {column === "meridian" && (
+                                        <>
+                                            <Picker.Item value="AM">
+                                                AM
+                                            </Picker.Item>
+                                            <Picker.Item value="PM">
+                                                PM
+                                            </Picker.Item>
+                                        </>
+                                    )}
+                                </Picker.Column>
+                            ))}
+                        </Picker>
+                    </div>
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
