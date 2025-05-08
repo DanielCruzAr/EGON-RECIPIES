@@ -61,8 +61,8 @@ const Page = () => {
                         value={type}
                         // className="overflow-auto scrollbar-thumb-foreground scrollbar-track-card-2 scrollbar-thin"
                     >
-                        <Card className="bg-card-2 rounded-2xl">
-                            <CardContent>
+                        <Card className="bg-card-2 rounded-2xl h-[400px] overflow-y-hidden">
+                            <CardContent className="overflow-y-auto scrollbar-thumb-foreground scrollbar-track-card-2 scrollbar-thin px-6">
                                 <div>
                                     {recipes
                                         .filter(

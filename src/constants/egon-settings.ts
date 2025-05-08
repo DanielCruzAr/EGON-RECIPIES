@@ -81,3 +81,16 @@ export const speekingSpeeds = [
     "Rápida",
     "Muy rápida",
 ];
+
+export const egonIncludedOptions = [
+    "SALUDOS Y DESPEDIDAS",
+    "FECHA Y HORA",
+    "NOTICIAS",
+    "CLIMA",
+    "RECORDATORIOS",
+    "LISTAS",
+    "MÚSICA",
+    "TEMPORIZADORES Y ALARMAS",
+    "BUSCADOR DE INTERNET",
+    "VIDEOS Y PODCASTS",
+];

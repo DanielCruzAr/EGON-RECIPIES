@@ -44,6 +44,11 @@ const Page = () => {
                 className={`flex items-center justify-between rounded-2xl py-2 px-4 w-2/5 mt-8 cursor-pointer ${
                     egon ? "bg-card-2" : "bg-card-2/10"
                 }`}
+                onClick={() => {
+                    if (egon) {
+                        window.location.href = "/egon/included";
+                    }
+                }}
             >
                 <h3 className={`${egon ? "text-gray-1" : "text-gray-1/10"}`}>
                     Incluidos con EGON

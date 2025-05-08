@@ -30,6 +30,8 @@ interface UIState {
     setEgonVoice: (value: number) => void;
     speakingSpeed: string;
     setSpeakingSpeed: (value: string) => void;
+    egonIncluded: string[];
+    setEgonIncluded: (value: string[]) => void;
 }
 
 export const useUIStore = create<UIState>()(
@@ -63,6 +65,8 @@ export const useUIStore = create<UIState>()(
             setEgonVoice: (value) => set({ egonVoice: value }),
             speakingSpeed: "normal",
             setSpeakingSpeed: (value) => set({ speakingSpeed: value }),
+            egonIncluded: [],
+            setEgonIncluded: (value) => set({ egonIncluded: value }),
         }),
         {
             name: "egon-settings",
