@@ -57,7 +57,7 @@ const Page = () => {
                 </TabsList>
                 {types.map((type) => (
                     <TabsContent key={type} value={type}>
-                        <div className="flex flex-col gap-4 overflow-y-auto h-[400px] scrollbar-thumb-foreground scrollbar-track-card scrollbar-thin px-2">
+                        <div className="flex flex-col gap-6 overflow-y-auto h-[400px] scrollbar-thumb-foreground scrollbar-track-card scrollbar-thin px-2 pt-4">
                             {recipes
                                 .filter((recipe) => recipe.type === type)
                                 .map((recipe) => (
@@ -73,9 +73,9 @@ const Page = () => {
                                             alt={recipe.name}
                                             width={110}
                                             height={110}
-                                            className="rounded-full object-cover"
+                                            className="rounded-full object-cover absolute left-2 top-1/2 -translate-y-1/2"
                                         />
-                                        <div className="flex flex-col">
+                                        <div className="flex flex-col pl-34">
                                             <h4>{recipe.name}</h4>
                                             <p className="text-xs text-gray-0">
                                                 {recipe.description}
