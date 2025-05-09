@@ -1,7 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import pepino from "../../../public/img/pepino.png";
+import cheese from "../../../public/img/cheese.png";
 import zanahoria from "../../../public/img/zanahoria.png";
+import milk from "../../../public/img/milk.png";
+import eggs from "../../../public/img/eggs.png";
+import meat from "../../../public/img/meat.jpg";
 
 const page = () => {
     const products = [
@@ -11,7 +15,7 @@ const page = () => {
         },
         {
             since: "hace 2 semanas",
-            image: zanahoria.src,
+            image: cheese.src,
         },
         {
             since: "hace 2 semanas",
@@ -19,15 +23,15 @@ const page = () => {
         },
         {
             since: "hace 2 semanas",
-            image: zanahoria.src,
+            image: milk.src,
         },
         {
             since: "hace 3 semanas",
-            image: zanahoria.src,
+            image: eggs.src,
         },
         {
             since: "hace 3 semanas",
-            image: zanahoria.src,
+            image: meat.src,
         },
         {
             since: "hace 3 semanas",
@@ -35,7 +39,7 @@ const page = () => {
         },
         {
             since: "hace 1 mes",
-            image: zanahoria.src,
+            image: eggs.src,
         },
     ];
 

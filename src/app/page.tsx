@@ -8,7 +8,7 @@ import {
     BookOpen,
 } from "lucide-react";
 import { useUIStore } from "@/stores/uiStore";
-import cheese from "../../public/img/cheese.jpg";
+import cheese from "../../public/img/cheese.png";
 import banana from "../../public/img/banana-bread.jpg";
 import fruit from "../../public/img/fruit-salad.jpg";
 import Image from "next/image";
@@ -48,14 +48,14 @@ export default function Home() {
             href: "/temp",
             title: "TEMPERATURA",
             content: (
-                <div className="flex flex-col bg-card p-2 rounded-2xl w-full">
-                    <div className="flex w-full justify-between border-b-2 border-black/45">
+                <div className="flex flex-col p-2 w-full">
+                    <div className="flex w-full justify-between border-b-2 border-card">
                         <p className="text-xs">CONGELADOR</p>
-                        <p className="text-xs text-black/45">-18°C</p>
+                        <p className="text-xs text-blue-500">-18°C</p>
                     </div>
                     <div className="flex w-full justify-between">
                         <p className="text-xs">REFRIGERADOR</p>
-                        <p className="text-xs text-black/45">4°C</p>
+                        <p className="text-xs text-blue-500">4°C</p>
                     </div>
                 </div>
             ),

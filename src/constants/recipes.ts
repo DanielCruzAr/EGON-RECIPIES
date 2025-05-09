@@ -1,6 +1,14 @@
-import eggs from "../../public/img/eggs.jpg";
+import eggs from "../../public/img/egg-breakfast.jpg";
 import bread from "../../public/img/bread-salad.jpg";
 import hotCakes from "../../public/img/hot-cakes.jpg";
+import sandwich from "../../public/img/sandwich.jpg";
+import banana from "../../public/img/banana-bread.jpg";
+import fruit from "../../public/img/fruit-salad.jpg";
+import beef from "../../public/img/beef.jpg";
+import chicken from "../../public/img/chicken.jpg";
+import salad from "../../public/img/salad.jpg";
+import burguer from "../../public/img/burger.jpg";
+import yogurt from "../../public/img/yogurt.jpg";
 
 export const recipes = [
     {
@@ -35,20 +43,29 @@ export const recipes = [
     {
         id: 5,
         type: "comidas",
-        name: "TACOS DE CARNITAS",
-        description: "Tacos tradicionales mexicanos con carnitas jugosas.",
+        name: "ENSALADA DE VERDURAS",
+        description: "Ensalada fresca con una mezcla de verduras y aderezo.",
+        complete: true,
+        toBuy: [],
+        image: fruit,
+    },
+    {
+        id: 6,
+        type: "comidas",
+        name: "HANMURGUESA DE RES",
+        description: "Hamburguesa jugosa de res con lechuga y jitomate.",
         complete: false,
-        toBuy: ["TORTILLAS", "CARNITAS"],
-        image: bread,
+        toBuy: ["LECHUGA"],
+        image: burguer,
     },
     {
         id: 8,
         type: "comidas",
-        name: "MOLE CON POLLO",
-        description: "Pollo bañado en mole, un platillo tradicional mexicano.",
+        name: "ARRACHERA CON VERDURAS",
+        description: "Corte de arrachera a la parrilla con verduras asadas.",
         complete: true,
         toBuy: [],
-        image: bread,
+        image: beef,
     },
     {
         id: 9,
@@ -57,45 +74,35 @@ export const recipes = [
         description: "Sándwich ligero y rápido con atún y vegetales.",
         complete: false,
         toBuy: ["ATÚN", "PAN"],
-        image: bread,
+        image: sandwich,
     },
     {
         id: 10,
         type: "cenas",
-        name: "QUESADILLAS CON POLLO",
-        description:
-            "Tortillas rellenas de queso y pollo, fáciles y deliciosas.",
-        complete: true,
-        toBuy: ["QUESO"],
-        image: bread,
+        name: "ENSALADA CESAR",
+        description: "Ideal para una cena ligera.",
+        complete: false,
+        toBuy: ["ADEREZO"],
+        image: salad,
     },
     {
         id: 11,
         type: "cenas",
-        name: "ENSALADA CON POLLO",
+        name: "ENSALADA DE POLLO",
         description: "Ensalada fresca con pollo, ideal para una cena ligera.",
         complete: true,
         toBuy: [],
-        image: bread,
-    },
-    {
-        id: 12,
-        type: "cenas",
-        name: "POLLO CON VERDURAS",
-        description: "Pollo cocido con una mezcla de verduras saludables.",
-        complete: true,
-        toBuy: [],
-        image: bread,
+        image: chicken,
     },
     {
         id: 13,
         type: "snacks",
-        name: "ROLLITOS DE JAMÓN Y QUESO",
+        name: "PAN DE PLATANO CON BERRY",
         description:
             "Rollitos sencillos de jamón y queso, perfectos para un snack rápido.",
         complete: true,
         toBuy: [],
-        image: bread,
+        image: banana,
     },
     {
         id: 14,
@@ -104,24 +111,6 @@ export const recipes = [
         description: "Yogurt natural acompañado de frutas frescas.",
         complete: true,
         toBuy: [],
-        image: bread,
-    },
-    {
-        id: 15,
-        type: "snacks",
-        name: "SMOOTHIE DE PLATANO",
-        description: "Bebida cremosa hecha con plátano y leche.",
-        complete: true,
-        toBuy: [],
-        image: bread,
-    },
-    {
-        id: 16,
-        type: "snacks",
-        name: "ZANAHORIA CON HUMMUS",
-        description: "Bastones de zanahoria acompañados de hummus.",
-        complete: true,
-        toBuy: [],
-        image: bread,
+        image: yogurt,
     },
 ];

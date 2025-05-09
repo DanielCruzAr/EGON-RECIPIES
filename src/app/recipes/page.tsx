@@ -7,6 +7,7 @@ import { Card } from "@/components/ui/card";
 import { recipes } from "@/constants/recipes";
 import { ChevronRight, Clock } from "lucide-react";
 import Image from "next/image";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Page = () => {
     const recipesValue = useUIStore((state) => state.recipesValue);
@@ -63,19 +64,22 @@ const Page = () => {
                                 .map((recipe) => (
                                     <Card
                                         key={recipe.id}
-                                        className="relative flex flex-row p-2 justify-between items-center overflow-y-visible bg-card-2 rounded-2xl cursor-pointer hover:transform hover:scale-101 transition-transform duration-300 ease-in-out"
+                                        className="relative flex flex-row px-2 py-3 justify-between items-center overflow-y-visible bg-card-2 rounded-2xl cursor-pointer hover:transform hover:scale-101 transition-transform duration-300 ease-in-out"
                                         onClick={() =>
                                             (window.location.href = `/recipes/${recipe.id}`)
                                         }
                                     >
-                                        <Image
-                                            src={recipe.image.src}
-                                            alt={recipe.name}
-                                            width={110}
-                                            height={110}
-                                            className="rounded-full object-cover absolute left-2 top-1/2 -translate-y-1/2"
-                                        />
-                                        <div className="flex flex-col pl-34">
+                                        <Avatar className="w-26 h-26 absolute top-1/2 left-2 transform -translate-y-1/2">
+                                            <AvatarImage
+                                                src={recipe.image.src}
+                                                className="object-cover"
+                                            />
+                                            <AvatarFallback>
+                                                {recipe.name}
+                                            </AvatarFallback>
+                                        </Avatar>
+                                        <div className="w-28"></div>
+                                        <div className="flex flex-col ml-8 w-full">
                                             <h4>{recipe.name}</h4>
                                             <p className="text-xs text-gray-0">
                                                 {recipe.description}
