@@ -10,9 +10,8 @@ const Page = () => {
     const setEgon = useUIStore((state) => state.setEgon);
 
     return (
-        <div className="flex flex-col items-start justify-start px-10 gap-4">
-            <h2>ASISTENTE DE VOZ EGON</h2>
-            <p className="text-gray-1">
+        <div className="flex flex-col items-start justify-start px-4 gap-4 mt-4">
+            <p className="text-gray-0 text-xl">
                 EGON es un asistente inteligente que te ayuda a encontrar
                 información y a realizar tareas.
             </p>
@@ -32,11 +31,11 @@ const Page = () => {
                     }
                 }}
             >
-                <h3 className={`${egon ? "text-gray-1" : "text-gray-1/10"}`}>
+                <h3 className={`${egon ? "" : "text-gray-1/10"}`}>
                     Configurar a EGON
                 </h3>
                 <ChevronRight
-                    className={`${egon ? "text-gray-1" : "text-gray-1/10"}`}
+                    className={`${egon ? "" : "text-gray-1/10"}`}
                     size={25}
                 />
             </div>
@@ -50,11 +49,11 @@ const Page = () => {
                     }
                 }}
             >
-                <h3 className={`${egon ? "text-gray-1" : "text-gray-1/10"}`}>
+                <h3 className={`${egon ? "" : "text-gray-1/10"}`}>
                     Incluidos con EGON
                 </h3>
                 <ChevronRight
-                    className={`${egon ? "text-gray-1" : "text-gray-1/10"}`}
+                    className={`${egon ? "" : "text-gray-1/10"}`}
                     size={25}
                 />
             </div>

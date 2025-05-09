@@ -13,8 +13,7 @@ const Page = () => {
     const types = ["desayunos", "comidas", "cenas", "snacks"];
 
     return (
-        <div className="flex flex-col items-start justify-start px-10 gap-4">
-            <h2>RECETAS</h2>
+        <div className="flex flex-col items-start justify-start px-4 gap-4 mt-4">
             <h3 className="text-gray-1">RECOMENDACIONES</h3>
             <Tabs
                 className="w-full gap-6"

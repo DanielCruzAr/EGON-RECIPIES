@@ -63,12 +63,12 @@ const EgonAccordion = () => {
                                 ) : (
                                     <div className="w-4"></div>
                                 )}
-                                <div className="w-full border-b-2 border-gray-2">
+                                <div className="w-full border-b-2 border-gray-0">
                                     <p
                                         className={`${
                                             selectedLanguage === language.id
                                                 ? ""
-                                                : "text-gray-1"
+                                                : "text-gray-0"
                                         }`}
                                     >
                                         {language.name}
@@ -92,7 +92,7 @@ const EgonAccordion = () => {
                 </AccordionTrigger>
                 <AccordionContent className="flex flex-col gap-4">
                     <div className="flex gap-4 items-center">
-                        <p className="text-gray-3">
+                        <p className="text-gray-0">
                             El refrigerador responderá al oir “OYE EGON” al
                             inicio de las peticiones.
                         </p>
@@ -109,7 +109,7 @@ const EgonAccordion = () => {
                 <AccordionTrigger>
                     <div className="flex flex-col w-full">
                         <h3>VOZ</h3>
-                        <p className="text-gray-3">
+                        <p className="text-gray-0">
                             Configura el acento de EGON
                         </p>
                     </div>
@@ -117,7 +117,7 @@ const EgonAccordion = () => {
                 <AccordionContent className="flex flex-col gap-4">
                     <div className="flex flex-col gap-10 p-4">
                         <div className="flex flex-col">
-                            <p className="text-gray-3">VARIANTES</p>
+                            <p className="text-gray-0">VARIANTES</p>
                             {selectedLanguage !== 0 &&
                                 languageIndex[selectedLanguage].variants.map(
                                     (variant, index) => (
@@ -136,14 +136,14 @@ const EgonAccordion = () => {
                                             <div
                                                 className={`w-full ${
                                                     index !== 0 &&
-                                                    "border-t-2 border-gray-2"
+                                                    "border-t-2 border-gray-0"
                                                 }`}
                                             >
                                                 <p
                                                     className={`${
                                                         egonVoiceVariant !==
                                                             variant &&
-                                                        "text-gray-3"
+                                                        "text-gray-0"
                                                     }`}
                                                 >
                                                     {variant}
@@ -154,7 +154,7 @@ const EgonAccordion = () => {
                                 )}
                         </div>
                         <div className="flex flex-col">
-                            <p className="text-gray-3">VOZ</p>
+                            <p className="text-gray-0">VOZ</p>
                             <div
                                 className="flex items-center cursor-pointer gap-2"
                                 onClick={() => {
@@ -166,10 +166,10 @@ const EgonAccordion = () => {
                                 ) : (
                                     <div className="w-4"></div>
                                 )}
-                                <div className="w-full border-b-2 border-gray-2">
+                                <div className="w-full border-b-2 border-gray-0">
                                     <p
                                         className={`${
-                                            egonVoice === 1 ? "" : "text-gray-3"
+                                            egonVoice === 1 ? "" : "text-gray-0"
                                         }`}
                                     >
                                         Voz 1 (Hombre)
@@ -190,7 +190,7 @@ const EgonAccordion = () => {
                                 <div className="w-full">
                                     <p
                                         className={`${
-                                            egonVoice === 2 ? "" : "text-gray-3"
+                                            egonVoice === 2 ? "" : "text-gray-0"
                                         }`}
                                     >
                                         Voz 2 (Mujer)
@@ -212,7 +212,7 @@ const EgonAccordion = () => {
                 </AccordionTrigger>
                 <AccordionContent className="flex flex-col gap-4">
                     <div className="flex flex-col">
-                        <p className="text-gray-3">VARIANTES</p>
+                        <p className="text-gray-0">VARIANTES</p>
                         {speekingSpeeds.map((variant, index) => (
                             <div
                                 key={index}
@@ -229,13 +229,13 @@ const EgonAccordion = () => {
                                 <div
                                     className={`w-full ${
                                         index !== 0 &&
-                                        "border-t-2 border-gray-2"
+                                        "border-t-2 border-gray-0"
                                     }`}
                                 >
                                     <p
                                         className={`${
                                             speakingSpeed !== variant &&
-                                            "text-gray-3"
+                                            "text-gray-0"
                                         }`}
                                     >
                                         {variant}

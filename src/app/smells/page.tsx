@@ -17,8 +17,7 @@ const Page = () => {
     });
 
     return (
-        <div className="flex flex-col items-start justify-start px-10 gap-4">
-            <h2>LIMPIADOR DE OLORES</h2>
+        <div className="flex flex-col items-start justify-start px-4 gap-4 mt-4">
             <p className="text-gray-1">
                 Activa y personaliza para una limpieza de olores dentro de tu
                 refrigerador. Esta función dura 20 minutos.

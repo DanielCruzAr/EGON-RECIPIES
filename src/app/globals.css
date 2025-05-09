@@ -5,10 +5,10 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-    --background: oklch(0.145 0 0);
+    --background: #9d9b9b;
     --foreground: #ffffff;
-    --card: #1c1b1e;
-    --card-2: #2e2e2f;
+    --card: #827d7d;
+    --card-2: #9b9797;
     --card-foreground: #ffffff;
     --popover: oklch(0.205 0 0);
     --popover-foreground: oklch(0.985 0 0);
@@ -37,6 +37,7 @@
     --sidebar-accent-foreground: oklch(0.985 0 0);
     --sidebar-border: oklch(1 0 0 / 10%);
     --sidebar-ring: oklch(0.556 0 0);
+    --gray-0: #d1d1d1;
     --gray-1: #b0b0b0;
     --gray-2: #6b6b6b;
     --gray-3: #848181;
@@ -82,6 +83,7 @@
     --radius-md: calc(var(--radius) - 2px);
     --radius-lg: var(--radius);
     --radius-xl: calc(var(--radius) + 4px);
+    --color-gray-0: var(--gray-0);
     --color-gray-1: var(--gray-1);
     --color-gray-2: var(--gray-2);
     --color-gray-3: var(--gray-3);
@@ -112,14 +114,14 @@
         border: 2px solid #08b219;
         box-shadow: 0 0 10px #08b219;
     }
+    .neon-border-2 {
+        border: 2px solid #d46231;
+        box-shadow: 0 0 10px #d46231;
+    }
 }
 
 body {
     font-family: "Inter", sans-serif;
-}
-
-h1 {
-    @apply text-5xl;
 }
 
 h2 {

@@ -9,9 +9,8 @@ const Page = () => {
     const setAlarm = useUIStore((state) => state.setAlarm);
 
     return (
-        <div className="flex flex-col items-start justify-start px-10 gap-4">
-            <h2>ALARMA</h2>
-            <p className="text-gray-1">
+        <div className="flex flex-col items-start justify-start px-4 gap-4 mt-4">
+            <p className="text-gray-0 text-xl">
                 Alarma de puerta abierta cada 2 minutos.
             </p>
             <Switch checked={alarm} onCheckedChange={() => setAlarm(!alarm)} />

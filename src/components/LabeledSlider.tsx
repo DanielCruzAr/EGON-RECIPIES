@@ -30,7 +30,7 @@ const LabeledSlider = ({
                                 ? "text-blue-400"
                                 : index === 2
                                 ? "text-blue-500"
-                                : "text-gray-1"
+                                : ""
                         }`}
                     >
                         {value}°C
@@ -50,10 +50,15 @@ const LabeledSlider = ({
 
             {/* Labels below the slider */}
             <div className="flex justify-between px-2 mt-2 text-sm">
-                {bottomLabels.map((value) => (
-                    <span key={value} className="neon-text">
-                        {value}
-                    </span>
+                {bottomLabels.map((value, index) => (
+                    <div className="flex flex-col items-center" key={index}>
+                        <span className="neon-text text-2xl">{value}</span>
+                        {index !== 1 && (
+                            <span className="text-xs">
+                                {index === 0 ? "Poco frío" : "Muy frío"}
+                            </span>
+                        )}
+                    </div>
                 ))}
             </div>
         </div>

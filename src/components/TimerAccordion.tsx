@@ -44,7 +44,7 @@ const TimerAccordion = ({
             disabled={!active}
         >
             <AccordionItem value="item-1">
-                <AccordionTrigger>HORA</AccordionTrigger>
+                <AccordionTrigger className="text-xl">HORA</AccordionTrigger>
                 <AccordionContent className="flex flex-col gap-4">
                     <div>
                         <Picker
@@ -85,7 +85,7 @@ const TimerAccordion = ({
             <AccordionItem value="item-2">
                 <AccordionTrigger>
                     <div className="w-full flex items-center">
-                        <p>REPETIR</p>
+                        <p className="text-xl">REPETIR</p>
                     </div>
                     {selectedDays.length > 0 && (
                         <div className="flex items-center justify-end w-full">

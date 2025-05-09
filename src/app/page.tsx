@@ -14,8 +14,8 @@ export default function Home() {
     }, []);
 
     return (
-        <div className="flex flex-col h-full">
-            <div className="flex w-full justify-end">
+        <div className="flex flex-col h-full w-full items-center justify-center relative">
+            <div className="flex w-full justify-end absolute top-0 right-0">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6 mx-2"
@@ -46,20 +46,20 @@ export default function Home() {
                     />
                 </svg>
             </div>
-            <div className="flex flex-col items-center justify-center w-full h-full gap-2">
+            <div className="flex flex-col items-center justify-center w-full gap-2">
                 <h4>Querétaro, Querétaro</h4>
-                <h1 className="font-semibold text-4xl text-white neon-text">
+                <h1 className="font-semibold text-5xl text-white neon-text">
                     ¡Hola, Mar!
                 </h1>
-                <div className="p-2">
+                <div className="flex flex-col items-center justify-center p-2">
                     <h5>{currentDate.toDateString()}</h5>
-                    <h2>
+                    <h1 className="text-6xl">
                         {currentDate.toLocaleTimeString([], {
                             hour: "2-digit",
                             minute: "2-digit",
                             hour12: true,
                         })}
-                    </h2>
+                    </h1>
                 </div>
                 <div className="flex gap-4 w-full justify-center overflow-auto lg:overflow-visible">
                     <div

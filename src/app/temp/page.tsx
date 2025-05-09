@@ -12,17 +12,16 @@ const Page = () => {
     const setUniformMode = useUIStore((state) => state.setUniformMode);
 
     return (
-        <div className="flex flex-col items-start justify-start px-10 gap-4">
-            <h2>TEMPERATURA</h2>
-            <div className="flex gap-6 items-center justify-between w-45">
-                <h3>UNIFORME</h3>
+        <div className="flex flex-col items-start justify-start px-4 gap-4 mt-4">
+            <div className="flex gap-6 items-center justify-between w-1/4">
+                <h3 className="text-xl">UNIFORME</h3>
                 <Switch
                     checked={uniformMode}
                     onCheckedChange={() => setUniformMode(!uniformMode)}
                 />
             </div>
-            <div className="flex gap-6 items-center justify-between w-45">
-                <h3>POR ZONAS</h3>
+            <div className="flex gap-6 items-center justify-between w-1/4">
+                <h3 className="text-xl">POR ZONAS</h3>
                 <Switch
                     checked={zonesAvailable}
                     onCheckedChange={() => setZonesAvailable(!zonesAvailable)}

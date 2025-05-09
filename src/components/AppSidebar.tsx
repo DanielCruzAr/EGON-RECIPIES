@@ -32,60 +32,70 @@ const AppSidebar = ({ className }: { className?: string }) => {
             icon: <Thermometer />,
             href: "/temp",
             active: zonesAvailable && uniformMode,
+            red: false,
         },
         {
             name: "MODO ECO",
             icon: <CircleUser />,
             href: "/eco",
             active: ecoMode,
+            red: false,
         },
         {
             name: "ALARMA",
             icon: <Bell />,
             href: "/alarm",
             active: alarm,
+            red: false,
         },
         {
             name: "LOCK",
             icon: <LockKeyhole />,
             href: "/lock",
             active: lock,
+            red: true,
         },
         {
             name: "CONSUME PRONTO",
             icon: <Clock />,
             href: "/consume",
             active: false,
+            red: false,
         },
         {
             name: "CÁMARA",
             icon: <Webcam />,
             href: "/camera",
             active: false,
+            red: false,
         },
         {
             name: "RECETAS",
             icon: <BookOpen />,
             href: "/recipes",
             active: false,
+            red: false,
         },
         {
             name: "LIMPIADOR DE OLORES",
             icon: <Shell />,
             href: "/smells",
             active: smells,
+            red: false,
         },
         {
             name: "ASISTENTE DE VOZ EGON",
             icon: <CircleUser />,
             href: "/egon",
             active: egon,
+            red: false,
         },
         {
             name: "SINCRONIZAR APP",
             icon: <MonitorSmartphone />,
             href: "/sincronize",
             active: false,
+            red: false,
         },
     ];
 
@@ -103,7 +113,11 @@ const AppSidebar = ({ className }: { className?: string }) => {
                 >
                     <div
                         className={`rounded-full border-2 ${
-                            item.active ? "neon-border" : "border-foreground"
+                            item.active
+                                ? `${
+                                      item.red ? "neon-border-2" : "neon-border"
+                                  }`
+                                : "border-foreground"
                         } p-2`}
                     >
                         {item.icon}

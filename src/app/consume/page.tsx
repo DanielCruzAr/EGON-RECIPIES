@@ -38,9 +38,8 @@ const page = () => {
     ];
 
     return (
-        <div className="flex flex-col items-start justify-start px-10 gap-4 h-fit">
-            <h2>CONSUME PRONTO</h2>
-            <p className="text-gray-1">
+        <div className="flex flex-col items-start justify-start px-4 gap-4 mt-4">
+            <p className="text-gray-0 text-xl">
                 En tu refrigerador hay productos desde
             </p>
             <div className="bg-card-2 w-full rounded-2xl p-6 flex flex-col gap-4">

@@ -9,9 +9,8 @@ const Page = () => {
     const setEcoMode = useUIStore((state) => state.setEcoMode);
 
     return (
-        <div className="flex flex-col items-start justify-start px-10 gap-4">
-            <h2>MODO ECO</h2>
-            <p className="text-gray-1">
+        <div className="flex flex-col items-start justify-start px-4 gap-4 mt-4">
+            <p className="text-gray-0 text-xl">
                 El Modo Eco reduce el consumo de energía del refrigerador
                 mediante la optimización de su funcionamiento. Esta función
                 ajusta automáticamente la configuración de otras funciones para
