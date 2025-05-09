@@ -7,53 +7,89 @@ import {
     ChevronRight,
     BookOpen,
 } from "lucide-react";
-
-const menuCards = [
-    {
-        icon: <Thermometer />,
-        label: "POR ZONAS",
-        href: "/temp",
-        title: "TEMPERATURA",
-        content: (
-            <div className="flex flex-col bg-gray-2 p-2 rounded-2xl w-full">
-                <div className="flex w-full justify-between border-b-2 border-black/45">
-                    <p className="text-xs">CONGELADOR</p>
-                    <p className="text-xs text-black/45">-18°C</p>
-                </div>
-                <div className="flex w-full justify-between">
-                    <p className="text-xs">REFRIGERADOR</p>
-                    <p className="text-xs text-black/45">4°C</p>
-                </div>
-            </div>
-        ),
-    },
-    {
-        icon: <Clock />,
-        label: "QUESO OAXACA",
-        href: "/consume",
-        title: "CONSUME PRONTO",
-        content: (
-            <div className="flex w-full items-center justify-center">
-                <p className="text-xs text-black/45">hace 2 semanas</p>
-            </div>
-        ),
-    },
-    {
-        icon: <Shell />,
-        label: "ACTIVO 9:00 P.M",
-        href: "/smells",
-        title: "LIMPIADOR DE OLORES",
-        content: (
-            <div className="flex w-full justify-center">
-                <p className="text-xs">Lun, Mié, Vie, Dom</p>
-            </div>
-        ),
-    },
-];
+import { useUIStore } from "@/stores/uiStore";
+import cheese from "../../public/img/cheese.jpg";
+import banana from "../../public/img/banana-bread.jpg";
+import fruit from "../../public/img/fruit-salad.jpg";
+import Image from "next/image";
 
 export default function Home() {
     const [currentDate, setCurrentDate] = useState(new Date());
+    const selectedDays = useUIStore((state) => state.selectedDays);
 
+    const getDaysShorted = (days: string[]) => {
+        const daysShorted = days.map((day) => {
+            switch (day) {
+                case "lunes":
+                    return "Lun";
+                case "martes":
+                    return "Mar";
+                case "miercoles":
+                    return "Mie";
+                case "jueves":
+                    return "Jue";
+                case "viernes":
+                    return "Vie";
+                case "sabados":
+                    return "Sab";
+                case "domingos":
+                    return "Dom";
+                default:
+                    return day;
+            }
+        });
+        return daysShorted.join(", ");
+    };
+
+    const menuCards = [
+        {
+            icon: <Thermometer />,
+            label: "POR ZONAS",
+            href: "/temp",
+            title: "TEMPERATURA",
+            content: (
+                <div className="flex flex-col bg-card p-2 rounded-2xl w-full">
+                    <div className="flex w-full justify-between border-b-2 border-black/45">
+                        <p className="text-xs">CONGELADOR</p>
+                        <p className="text-xs text-black/45">-18°C</p>
+                    </div>
+                    <div className="flex w-full justify-between">
+                        <p className="text-xs">REFRIGERADOR</p>
+                        <p className="text-xs text-black/45">4°C</p>
+                    </div>
+                </div>
+            ),
+        },
+        {
+            icon: <Clock />,
+            label: "QUESO OAXACA",
+            href: "/consume",
+            title: "CONSUME PRONTO",
+            content: (
+                <div className="flex w-full items-center justify-center gap-1">
+                    <Image
+                        src={cheese.src}
+                        alt="queso"
+                        width={30}
+                        height={30}
+                        className="rounded-full object-cover"
+                    />
+                    <p className="text-xs text-[#fade3f]">hace 2 semanas</p>
+                </div>
+            ),
+        },
+        {
+            icon: <Shell />,
+            label: "ACTIVO 9:00 P.M",
+            href: "/smells",
+            title: "LIMPIADOR DE OLORES",
+            content: (
+                <div className="flex w-full justify-center">
+                    <p className="text-xs">{getDaysShorted(selectedDays)}</p>
+                </div>
+            ),
+        },
+    ];
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentDate(new Date());
@@ -138,7 +174,7 @@ export default function Home() {
                         </div>
                     ))}
                     <div
-                        className="col-span-12 row-span-1 flex items-center justify-between rounded-2xl p-4 bg-card-2 cursor-pointer"
+                        className="col-span-12 row-span-1 flex items-center justify-between rounded-2xl p-4 bg-card-2 hover:transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer"
                         onClick={() => (window.location.href = "/recipes")}
                     >
                         <div className="rounded-full border-2 border-foreground p-2">
@@ -148,10 +184,26 @@ export default function Home() {
                             <h4>RECETAS</h4>
                             <p className="text-black/45 text-xs">SNACKS</p>
                         </div>
-                        <p className="text-black/45">Ensalada de Verduras</p>
-                        <p className="text-black/45">
-                            Pan de plátano con berry
-                        </p>
+                        <div className="flex items-center gap-1">
+                            <Image
+                                src={fruit.src}
+                                alt="snack"
+                                width={30}
+                                height={30}
+                                className="rounded-full object-cover"
+                            />
+                            <p>Ensalada de Verduras</p>
+                        </div>
+                        <div className="flex items-center gap-1">
+                            <Image
+                                src={banana.src}
+                                alt="snack"
+                                width={30}
+                                height={30}
+                                className="rounded-full object-cover"
+                            />
+                            <p>Pan de plátano con berry</p>
+                        </div>
                         <div className="flex items-center">
                             <p className="text-xs neon-text font-bold">Ir</p>
                             <ChevronRight size={15} />

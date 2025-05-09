@@ -51,7 +51,7 @@ export const useUIStore = create<UIState>()(
             setRecipesValue: (value) => set({ recipesValue: value }),
             smells: false,
             setSmells: (value) => set({ smells: value }),
-            selectedDays: [],
+            selectedDays: ["lunes", "martes", "miercoles"],
             setSelectedDays: (value) => set({ selectedDays: value }),
             egon: false,
             setEgon: (value) => set({ egon: value }),

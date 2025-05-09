@@ -46,7 +46,7 @@ const AppSidebar = ({ className }: { className?: string }) => {
             icon: <Bell />,
             href: "/alarm",
             active: alarm,
-            red: false,
+            red: true,
         },
         {
             name: "LOCK",

@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import React from "react";
 import { recipes } from "@/constants/recipes";
 import { ChevronLeft } from "lucide-react";
+import Image from "next/image";
 
 const Page = () => {
     const { recipeId } = useParams<{ recipeId: string }>();
@@ -25,6 +26,15 @@ const Page = () => {
                     <div className="flex flex-col w-full h-full items-center justify-center">
                         <h3>TUTORIAL</h3>
                         <h3>{recipe?.name}</h3>
+                    </div>
+                    <div className="flex w-full h-full items-center justify-center">
+                        <Image
+                            src={recipe?.image.src!}
+                            alt={""}
+                            width={300}
+                            height={300}
+                            className="rounded-2xl object-cover"
+                        />
                     </div>
                 </CardContent>
             </Card>
