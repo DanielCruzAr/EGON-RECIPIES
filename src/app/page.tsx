@@ -16,6 +16,8 @@ import Image from "next/image";
 export default function Home() {
     const [currentDate, setCurrentDate] = useState(new Date());
     const selectedDays = useUIStore((state) => state.selectedDays);
+    const freezerDoor = useUIStore((state) => state.freezerDoor);
+    const fridgeDoor = useUIStore((state) => state.fridgeDoor);
 
     const getDaysShorted = (days: string[]) => {
         const daysShorted = days.map((day) => {
@@ -51,11 +53,11 @@ export default function Home() {
                 <div className="flex flex-col p-2 w-full">
                     <div className="flex w-full justify-between border-b-2 border-card">
                         <p className="text-xs">CONGELADOR</p>
-                        <p className="text-xs text-blue-500">-18°C</p>
+                        <p className="text-xs text-blue-500">{freezerDoor}°C</p>
                     </div>
                     <div className="flex w-full justify-between">
                         <p className="text-xs">REFRIGERADOR</p>
-                        <p className="text-xs text-blue-500">4°C</p>
+                        <p className="text-xs text-blue-500">{fridgeDoor}°C</p>
                     </div>
                 </div>
             ),
@@ -146,7 +148,7 @@ export default function Home() {
                         })}
                     </h1>
                 </div>
-                <div className="grid grid-rows-3 grid-cols-12 w-full h-full gap-4 overflow-auto lg:overflow-visible">
+                <div className="grid grid-rows-3 grid-cols-12 w-full gap-4 overflow-auto lg:overflow-visible">
                     {menuCards.map((card, index) => (
                         <div
                             key={index}
@@ -211,7 +213,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <div className="flex h-full w-full justify-center items-end mt-4">
+            <div className="flex w-full justify-center items-end mt-4">
                 <p className="text-gray-2">
                     Toca para personalizar pantalla principal
                 </p>

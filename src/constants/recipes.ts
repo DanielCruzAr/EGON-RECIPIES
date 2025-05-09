@@ -52,7 +52,7 @@ export const recipes = [
     {
         id: 6,
         type: "comidas",
-        name: "HANMURGUESA DE RES",
+        name: "HAMURGUESA DE RES",
         description: "Hamburguesa jugosa de res con lechuga y jitomate.",
         complete: false,
         toBuy: ["LECHUGA"],

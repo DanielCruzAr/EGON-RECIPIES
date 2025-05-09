@@ -8,14 +8,16 @@ import { Slider } from "./ui/slider";
 const LabeledSlider = ({
     min,
     max,
-    defaultValue,
+    value,
+    onValueChange,
 }: {
     min: number;
     max: number;
-    defaultValue: number;
+    value: number;
+    onValueChange: (value: number[]) => void;
 }) => {
-    const [sliderValue, setSliderValue] = useState<number[]>([defaultValue]);
-    const marks = [min, sliderValue, max];
+    // const [sliderValue, setSliderValue] = useState<number[]>([defaultValue]);
+    const marks = [min, value, max];
     const bottomLabels = ["-", "", "+"];
 
     return (
@@ -40,12 +42,11 @@ const LabeledSlider = ({
 
             {/* Slider */}
             <Slider
-                defaultValue={[defaultValue]}
                 min={min}
                 max={max}
                 step={1}
-                value={sliderValue}
-                onValueChange={(value) => setSliderValue(value)}
+                value={[value]}
+                onValueChange={onValueChange}
             />
 
             {/* Labels below the slider */}

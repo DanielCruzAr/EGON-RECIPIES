@@ -32,6 +32,14 @@ interface UIState {
     setSpeakingSpeed: (value: string) => void;
     egonIncluded: string[];
     setEgonIncluded: (value: string[]) => void;
+    freezerDoor: number;
+    setFreezerDoor: (value: number) => void;
+    freezerBox: number;
+    setFreezerBox: (value: number) => void;
+    fridgeDoor: number;
+    setFridgeDoor: (value: number) => void;
+    fridgeBox: number;
+    setFridgeBox: (value: number) => void;
 }
 
 export const useUIStore = create<UIState>()(
@@ -67,6 +75,14 @@ export const useUIStore = create<UIState>()(
             setSpeakingSpeed: (value) => set({ speakingSpeed: value }),
             egonIncluded: [],
             setEgonIncluded: (value) => set({ egonIncluded: value }),
+            freezerDoor: -18,
+            setFreezerDoor: (value) => set({ freezerDoor: value }),
+            freezerBox: -18,
+            setFreezerBox: (value) => set({ freezerBox: value }),
+            fridgeDoor: 4,
+            setFridgeDoor: (value) => set({ fridgeDoor: value }),
+            fridgeBox: 4,
+            setFridgeBox: (value) => set({ fridgeBox: value }),
         }),
         {
             name: "egon-settings",
