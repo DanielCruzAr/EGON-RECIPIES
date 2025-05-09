@@ -1,6 +1,55 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { PlusIcon } from "lucide-react";
+import {
+    Thermometer,
+    Clock,
+    Shell,
+    ChevronRight,
+    BookOpen,
+} from "lucide-react";
+
+const menuCards = [
+    {
+        icon: <Thermometer />,
+        label: "POR ZONAS",
+        href: "/temp",
+        title: "TEMPERATURA",
+        content: (
+            <div className="flex flex-col bg-gray-2 p-2 rounded-2xl w-full">
+                <div className="flex w-full justify-between border-b-2 border-black/45">
+                    <p className="text-xs">CONGELADOR</p>
+                    <p className="text-xs text-black/45">-18°C</p>
+                </div>
+                <div className="flex w-full justify-between">
+                    <p className="text-xs">REFRIGERADOR</p>
+                    <p className="text-xs text-black/45">4°C</p>
+                </div>
+            </div>
+        ),
+    },
+    {
+        icon: <Clock />,
+        label: "QUESO OAXACA",
+        href: "/consume",
+        title: "CONSUME PRONTO",
+        content: (
+            <div className="flex w-full items-center justify-center">
+                <p className="text-xs text-black/45">hace 2 semanas</p>
+            </div>
+        ),
+    },
+    {
+        icon: <Shell />,
+        label: "ACTIVO 9:00 P.M",
+        href: "/smells",
+        title: "LIMPIADOR DE OLORES",
+        content: (
+            <div className="flex w-full justify-center">
+                <p className="text-xs">Lun, Mié, Vie, Dom</p>
+            </div>
+        ),
+    },
+];
 
 export default function Home() {
     const [currentDate, setCurrentDate] = useState(new Date());
@@ -14,8 +63,8 @@ export default function Home() {
     }, []);
 
     return (
-        <div className="flex flex-col h-full w-full items-center justify-center relative">
-            <div className="flex w-full justify-end absolute top-0 right-0">
+        <div className="flex flex-col h-full w-full items-center">
+            <div className="flex w-full justify-end">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6 mx-2"
@@ -46,7 +95,7 @@ export default function Home() {
                     />
                 </svg>
             </div>
-            <div className="flex flex-col items-center justify-center w-full gap-2">
+            <div className="flex flex-col items-center justify-center w-full h-full gap-2">
                 <h4>Querétaro, Querétaro</h4>
                 <h1 className="font-semibold text-5xl text-white neon-text">
                     ¡Hola, Mar!
@@ -61,32 +110,56 @@ export default function Home() {
                         })}
                     </h1>
                 </div>
-                <div className="flex gap-4 w-full justify-center overflow-auto lg:overflow-visible">
+                <div className="grid grid-rows-3 grid-cols-12 w-full h-full gap-4 overflow-auto lg:overflow-visible">
+                    {menuCards.map((card, index) => (
+                        <div
+                            key={index}
+                            className="col-span-4 row-span-2 flex flex-col items-center justify-between rounded-2xl p-4 bg-card-2 hover:transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer"
+                            onClick={() => (window.location.href = card.href)}
+                        >
+                            <div className="flex flex-col w-full items-center justify-center gap-2">
+                                <div className="rounded-full border-2 border-foreground p-2">
+                                    {card.icon}
+                                </div>
+                                <div className="flex flex-col w-full items-center justify-center">
+                                    <h4>{card.label}</h4>
+                                    {card.content}
+                                </div>
+                            </div>
+                            <div className="flex flex-col w-full justify-center items-center mt-4">
+                                <p className="text-xs">{card.title}</p>
+                                <div className="flex items-center">
+                                    <p className="text-xs neon-text font-bold">
+                                        Ir
+                                    </p>
+                                    <ChevronRight size={15} />
+                                </div>
+                            </div>
+                        </div>
+                    ))}
                     <div
-                        className="flex flex-col items-center justify-center w-[150px] h-[150px] rounded-2xl p-6 bg-card-2 hover:transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer"
+                        className="col-span-12 row-span-1 flex items-center justify-between rounded-2xl p-4 bg-card-2 cursor-pointer"
                         onClick={() => (window.location.href = "/recipes")}
                     >
-                        <div className="flex flex-col items-center justify-center">
+                        <div className="rounded-full border-2 border-foreground p-2">
+                            <BookOpen />
+                        </div>
+                        <div className="flex flex-col justify-center items-center">
                             <h4>RECETAS</h4>
-                            <p className="text-gray-1 text-sm">SNACKS</p>
+                            <p className="text-black/45 text-xs">SNACKS</p>
                         </div>
-                        <p className="text-gray-1 text-sm">Ir &gt;</p>
-                    </div>
-                    <div className="flex flex-col items-center justify-center w-[150px] h-[150px] rounded-2xl p-6 bg-card-2 hover:transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
-                        <div className="flex flex-col items-center justify-centerr">
-                            <PlusIcon className="text-gray-1 h-15 w-15" />
-                            <p className="text-gray-1 text-sm">Agregar Atajo</p>
-                        </div>
-                    </div>
-                    <div className="flex flex-col items-center justify-center w-[150px] h-[150px] rounded-2xl p-6 bg-card-2 hover:transform hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
-                        <div className="flex flex-col items-center justify-centerr">
-                            <PlusIcon className="text-gray-1 h-15 w-15" />
-                            <p className="text-gray-1 text-sm">Agregar Atajo</p>
+                        <p className="text-black/45">Ensalada de Verduras</p>
+                        <p className="text-black/45">
+                            Pan de plátano con berry
+                        </p>
+                        <div className="flex items-center">
+                            <p className="text-xs neon-text font-bold">Ir</p>
+                            <ChevronRight size={15} />
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="flex w-full justify-center mt-10">
+            <div className="flex h-full w-full justify-center items-end mt-4">
                 <p className="text-gray-2">
                     Toca para personalizar pantalla principal
                 </p>
